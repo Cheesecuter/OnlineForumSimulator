@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper 
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" 
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.j2eeprac.Dao.I_UserDao">
+	<insert id="insert" parameterType="com.j2eeprac.Entities.User.User">
+		insert into user_tb(ukey,uname,usex,uage,authority) values(#{ukey},#{uname},#{usex},#{uage},#{authority})
+	</insert>
+	<delete id="delete" parameterType="String">
+		delete from user_tb where uid=#{uid}
+	</delete>
+	<update id="update" parameterType="com.j2eeprac.Entities.User.User">
+		update user_tb set uid=#{uid},ukey=#{ukey},uname=#{uname},usex=#{usex},uage=#{uage},authority=#{authority} where uid=#{uid}
+	</update>
+	<update id="updateUserInfo" parameterType="com.j2eeprac.Entities.User.User">
+		update user_tb set uid=#{uid},uname=#{uname},usex=#{usex},uage=#{uage},authority=#{authority} where uid=#{uid}
+	</update>
+	<select id="countAll" resultType="int">
+		select count(*) c from user_tb
+	</select>
+	<select id="selectAll" resultType="com.j2eeprac.Entities.User.User">
+		select * from user_tb order by uid asc
+	</select>
+	<select id="findByUserID" parameterType="String" resultType="com.j2eeprac.Entities.User.User">
+		select * from user_tb where uid=#{uid}
+	</select>
+	<select id="findByUserName" parameterType="String" resultType="com.j2eeprac.Entities.User.User">
+		select * from user_tb where uName=#{uName}
+	</select>
+</mapper>

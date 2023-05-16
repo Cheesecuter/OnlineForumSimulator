@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper 
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" 
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.j2eeprac.Dao.I_CommentDao">
+	<insert id="insert" parameterType="com.j2eeprac.Entities.Comment.Comment">
+		insert into comment_tb(cid,uid,aid,uname,aname,comment) values(#{cid},#{uid},#{aid},#{uname},#{aname},#{comment})
+	</insert>
+	<delete id="delete" parameterType="String">
+		delete from comment_tb where cid=#{cid}
+	</delete>
+	<update id="update" parameterType="String">
+		update comment_tb set cid=#{cid},uid=#{uid},aid=#{aid},uname=#{uname},aname=#{aname},comment=#{comment}, where cid=#{cid}
+	</update>
+	<select id="countAll" resultType="int">
+		select count(*) c from comment_tb
+	</select>
+	<select id="selectAll" resultType="com.j2eeprac.Entities.Comment.Comment">
+		select * from comment_tb order by cid asc
+	</select>
+	<select id="findByCommentID" parameterType="String" resultType="com.j2eeprac.Entities.Comment.Comment">
+		select * from comment_tb where cid=#{cid}
+	</select>
+	<select id="findByUserID" parameterType="String" resultType="com.j2eeprac.Entities.Comment.Comment">
+		select * from comment_tb where uid=#{uid}
+	</select>
+	<select id="findByUserName" parameterType="String" resultType="com.j2eeprac.Entities.Comment.Comment">
+		select * from comment_tb where uname=#{uname}
+	</select>
+</mapper>

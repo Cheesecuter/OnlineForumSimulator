@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper 
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" 
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.j2eeprac.Dao.I_ArticleDao">
+	<insert id="insert" parameterType="com.j2eeprac.Entities.Article.Article">
+		insert into article_tb(aname,author,content) values(#{aname},#{author},#{content})
+	</insert>
+	<delete id="delete" parameterType="String">
+		delete from article_tb where aid=#{aid}
+	</delete>
+	<update id="update" parameterType="com.j2eeprac.Entities.Article.Article">
+		update article_tb set aid=#{aid},aname=#{aname},author=#{author},content=#{content} where aid=#{aid}
+	</update>
+	<select id="countAll" resultType="int">
+		select count(*) c from article_tb
+	</select>
+	<select id="selectAll" resultType="com.j2eeprac.Entities.Article.Article">
+		select * from article_tb order by aid asc
+	</select>
+	<select id="selectAllByAuthor" parameterType="String" resultType="com.j2eeprac.Entities.Article.Article">
+		select * from article_tb where author=#{author} order by aid asc
+	</select>
+	<select id="findByArticleID" parameterType="String" resultType="com.j2eeprac.Entities.Article.Article">
+		select * from article_tb where aid=#{aid}
+	</select>
+	<select id="findByArticleName" parameterType="String" resultType="com.j2eeprac.Entities.Article.Article">
+		select * from article_tb where aname=#{aname}
+	</select>
+	<select id="findArticles" parameterType="String" resultType="com.j2eeprac.Entities.Article.Article">
+		select * from article_tb
+		where aname like "%"#{keyword}"%" or content like "%"#{keyword}"%"
+	</select>
+</mapper>

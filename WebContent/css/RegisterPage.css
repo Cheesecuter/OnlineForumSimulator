@@ -1,0 +1,483 @@
+@charset "UTF-8";
+
+* {
+	margin: 0;
+	padding: 0;
+}
+
+.mainPage {
+	overflow: hidden;
+	background-color: #f5f2fb;
+	min-height: 512px;
+	height: 100%;
+	font-family: 'Microsoft YaHei', 'SimSun';
+}
+
+.toolBar {
+	background-color: #27262a;
+	color: #cec0eb;
+	font-size: 16px;
+	font-weight: 400;
+	position: relative;
+}
+
+.toolBar-Container {
+	width: 100%;
+	height: 80px;
+	box-sizing: border-box;
+	padding: 0 20px;
+	margin: 0 auto;
+	display: flex;
+	-webkit-box-pack: justify;
+	justify-content: space-between;
+}
+
+.toolBar-Container-Left {
+	-webkit-box-flex: 0;
+	flex: none;
+}
+
+.toolBar-Container-Left-Logo {
+	width: 80px;
+	height: 80px;
+	margin-left: 0;
+	margin-top: 0;
+	position: relative;
+	float: left;
+}
+
+.toolBar-Container-Left-Menus {
+	width: auto;
+	display: inline;
+	margin-left: 80px;
+}
+
+.toolBar-Container-Left-Menus a {
+	text-decoration: none;
+	color: #cec0eb;
+}
+
+#toolBar-Menu {
+	margin: 25px 15px;
+	height: 40px;
+	position: relative;
+	float: left;
+}
+
+#toolBar-Menu ul {
+	list-style: none;
+	margin-left: 5px;
+}
+
+#toolBar-Menu li {
+	margin-left: 10px;
+	display: inline;
+}
+
+.toolBar-Container-Middle {
+	padding: 0 20px;
+}
+
+.toolBar-Container-Middle-Search {
+	max-width: 400px;
+	min-width: 300px;
+}
+
+.toolBar-Container-Middle-Search-Container {
+	-webkit-box-sizing: border-box;
+	width: 100%;
+	height: 40px;
+	margin: 20px 30px 0 0;
+	box-sizing: border-box;
+}
+
+.toolBar-Container-Middle-Search-Container input {
+	text-indent: 12px;
+	width: calc(100% -88px);
+	font-size: 14px;
+	display: inline-block;
+	height: 100%;
+	background: #3e3c40;
+	color: #cec0eb;
+	vertical-align: top;
+	border: 2px solid #b8a6dc;
+	border-right: 3px solid #b8a6dc;
+	box-sizing: border-box;
+	outline: none;
+	border-radius: 16px 0 0 16px;
+}
+
+.toolBar-Container-Middle-Search-Container .gradient {
+	pointer-events: none;
+	background: #3e3c40;
+	position: absolute;
+	transform: translate(-40px, 1px);
+	display: inline-block;
+	width: 40px;
+	height: 38px;
+}
+
+.toolBar-Container-Middle-Search-Container button {
+	display: inline-block;
+	width: 100px;
+	height: 100%;
+	outline: 0;
+	border: 1 none;
+	border-radius: 0 16px 16px 0;
+	font-size: 14px;
+	line-height: 32px;
+	cursor: pointer;
+	transition: all .2s ease-in;
+	background-color: #b8a6dc;
+	color: #3e3c40;
+	text-align: center;
+}
+
+.toolBar-Container-Right {
+	-webkit-box-flex: 0;
+	width: auto !important;
+	display: flex;
+	flex: none;
+}
+
+.toolBar-Container-Right-UserName {
+	float: left;
+	position: relative;
+	padding: 20px;
+	flex: 5;
+	white-space: nowrap;
+}
+
+.toolBar-Container-Right-UserName span {
+	white-space: nowrap;
+}
+
+.toolBar-Container-Right-Btns {
+	height: 100%;
+	flex: 1;
+}
+
+.toolBar-Container-Right-Btns-Login {
+	padding: 20px 0 0 0 !important;
+	height: auto;
+}
+
+.toolBar-Container-Right-Btns-Login button {
+	display: block;
+	position: relative;
+	width: 40px;
+	height: 40px;
+	line-height: 40px;
+	text-align: center;
+	background-color: #b8a6dc;
+	color: #3e3c40;
+	border-radius: 50%;
+	cursor: pointer;
+}
+
+.toolBar-Container-Right-Btns-Avatar {
+	display: block;
+}
+
+.mainBox-Container {
+	-webkit-box-pack: center !important;
+	justify-content: center !important;
+	display: flex !important;
+	height: auto !important;
+	padding: 15px 15px 15px 15px;
+}
+
+mainBox {
+	min-height: 512px;
+}
+
+.mainBox {
+	width: 1024px;
+	height: auto !important;
+	box-shadow: 0 2px 12px 0 rgba(0, 0, 0, .1);
+	background-color: #ffffff;
+}
+
+.mainBox-UserProfileBoxContainer {
+	display: flex !important;
+	width: 100%;
+	height: 100%;
+}
+
+.mainBox-UserProfileBox-Title {
+	font-size: 30px;
+	font-family: 'Microsoft YaHei', 'SimSun';
+	text-align: center;
+}
+
+.mainBox-UserProfileBox {
+	margin: auto;
+	display: block;
+}
+
+.mainBox-UserProfileBox div {
+	margin: 20px 0 20px 0;
+	height: 30px;
+}
+
+.userProfileStarTXT {
+	width: 5px;
+	margin: 20px 5px;
+	color: #ff0000;
+	font-size: 25px;
+}
+
+.userProfileErrorPW {
+	width: 110px;
+	margin: 20px 5px;
+	color: #ff0000;
+	font-size: 20px;
+}
+
+.userProfileUname {
+	display: flex;
+}
+
+.userProfileUnameTXT {
+	width: 100px;
+	font-size: 20px;
+	margin: 0 20px;
+}
+
+.userProfileUname input {
+	font-size: 20px;
+	font-family: 'Microsoft YaHei', 'SimSun';
+	height: 30px;
+	margin: 20px 40px 20px 40px;
+	padding: 0 15px;
+	border-radius: 7px;
+	background-color: #f5f7fa;
+	border: 1px solid #dcdfe6;
+	color: #000000;
+	cursor: pointer;
+}
+
+.userProfileUkey {
+	display: flex;
+}
+
+.userProfileUkeyTXT {
+	width: 100px;
+	font-size: 20px;
+	margin: 0 20px;
+}
+
+.userProfileUkey input {
+	font-size: 20px;
+	font-family: 'Microsoft YaHei', 'SimSun';
+	height: 30px;
+	margin: 20px 40px 20px 40px;
+	padding: 0 15px;
+	border-radius: 7px;
+	background-color: #f5f7fa;
+	border: 1px solid #dcdfe6;
+	color: #000000;
+	cursor: pointer;
+}
+
+.userProfileUkeyCheck {
+	display: flex;
+}
+
+.userProfileUkeyCheckTXT {
+	width: 100px;
+	font-size: 20px;
+	margin: 0 20px;
+}
+
+.userProfileUkeyCheck input {
+	font-size: 20px;
+	font-family: 'Microsoft YaHei', 'SimSun';
+	height: 30px;
+	margin: 20px 40px 20px 40px;
+	padding: 0 15px;
+	border-radius: 7px;
+	background-color: #f5f7fa;
+	border: 1px solid #dcdfe6;
+	color: #000000;
+	cursor: pointer;
+}
+
+.userProfileUsex {
+	display: flex;
+}
+
+.userProfileUsexTXT {
+	width: 100px;
+	font-size: 20px;
+	margin: 0 20px;
+}
+
+.userProfileUsex input {
+	font-size: 20px;
+	font-family: 'Microsoft YaHei', 'SimSun';
+	height: 30px;
+	margin: 20px 40px 20px 40px;
+	padding: 0 15px;
+	border-radius: 7px;
+	background-color: #f5f7fa;
+	border: 1px solid #dcdfe6;
+	color: #000000;
+	cursor: pointer;
+}
+
+.userProfileUage {
+	display: flex;
+}
+
+.userProfileUageTXT {
+	width: 100px;
+	font-size: 20px;
+	margin: 0 20px;
+}
+
+.userProfileUage input {
+	font-size: 20px;
+	font-family: 'Microsoft YaHei', 'SimSun';
+	height: 30px;
+	margin: 20px 40px 20px 40px;
+	padding: 0 15px;
+	border-radius: 7px;
+	background-color: #f5f7fa;
+	border: 1px solid #dcdfe6;
+	color: #000000;
+	cursor: pointer;
+}
+
+.userProfileSubmitBtn {
+	padding: 20px 40px;
+	display: flex;
+}
+
+.userProfileFormSubmitBtn {
+	flex: 1;
+	width: 40%;
+	height: 30px;
+	outline: 0;
+	border: 1 none;
+	border-radius: 5px;
+	margin: 0 1px;
+	background: #27262a;
+	color: #ffffff;
+	border: none;
+	transition: all .2s ease-in;
+	cursor: pointer;
+}
+
+.userProfileFormSubmitBtn:hover {
+	flex: 1;
+	width: 40%;
+	height: 30px;
+	outline: 0;
+	border: 1 none;
+	border-radius: 5px;
+	margin: 0 1px;
+	background: #48464d;
+	color: #ffffff;
+	border: none;
+	transition: all .1s ease-in;
+	cursor: pointer;
+}
+
+.footer {
+	background-color: #27262a;
+	border-top-width: 5px;
+	border-top-style: solid;
+	color: #27262a;
+	width: 100%;
+	overflow: hidden;
+	padding: 30px 0 10px;
+}
+
+.footerContainer {
+	color: #999;
+	width: 1200px;
+	margin: 0 auto;
+	position: relative;
+	letter-spacing: 2px;
+}
+
+.footerList {
+	height: 30px;
+	line-height: 30px;
+	font-size: 18px;
+}
+
+.footerTitle {
+	height: 30px;
+	line-height: 30px;
+	font-size: 18px;
+}
+
+.footerUl {
+	padding: 0;
+	list-style: none;
+	text-decoration: none;
+	margin: 0;
+}
+
+.footerBottom {
+	font-size: 14px;
+	border-top: 1px solid #393939;
+	padding: 20px 0 40px 0;
+	margin-top: 30px;
+	line-height: 25px;
+}
+
+.footerBottom section {
+	max-width: 1000px;
+}
+
+.arrow {
+	border: 9px solid transparent;
+	border-bottom-color: #38373b;
+	width: 0px;
+	height: 0px;
+	top: 0px
+}
+
+.stick {
+	width: 8px;
+	height: 14px;
+	border-radius: 1px;
+	background-color: #38373b;
+	top: 15px;
+}
+
+#backToTop div {
+	position: absolute;
+	margin: auto;
+	right: 0px;
+	left: 0px;
+}
+
+#backToTop {
+	background-color: #b8a6dc;
+	height: 38px;
+	width: 38px;
+	border-radius: 3px;
+	display: block;
+	cursor: pointer;
+	position: fixed;
+	right: 50px;
+	bottom: 100px;
+	display: none;
+}
+
+#backToTop:hover {
+	background-color: #c2b5e1;
+	height: 38px;
+	width: 38px;
+	border-radius: 3px;
+	display: block;
+	cursor: pointer;
+	position: fixed;
+	right: 50px;
+	bottom: 100px;
+	display: none;
+}

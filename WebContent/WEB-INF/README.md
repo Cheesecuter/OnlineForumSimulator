@@ -1,0 +1,23 @@
+# Library List:
+
+- ant-1.10.3.jar
+- ant-launcher-1.10.3.jar
+- asm-7.0.jar
+- cglib-3.2.10.jar
+- commons-logging-1.2.jar
+- javassist-3.24.1-GA.jar
+- jstl.jar
+- log4j-1.2.17.jar
+- log4j-api-2.11.2.jar
+- log4j-core-2.11.2.jar
+- mybatis-3.5.2.jar
+- mysql-connector-j-8.0.32.jar
+- ognl-3.2.10.jar
+- servlet-api.jar
+- slf4j-api-1.7.26.jar
+- slf4j-log4j12-1.7.26.jar
+- spring-beans-5.2.9.RELEASE.jar
+- spring-context-5.2.9.RELEASE.jar
+- spring-core-5.2.9.RELEASE.jar
+- spring-expression-5.2.9.RELEASE.jar
+- standard.jar

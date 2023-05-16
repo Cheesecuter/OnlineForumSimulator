@@ -1,0 +1,817 @@
+@charset "UTF-8";
+
+* {
+	margin: 0;
+	padding: 0;
+}
+
+.mainPage {
+	overflow: hidden;
+	background-color: #f5f2fb;
+	min-height: 512px;
+	height: 100%;
+	font-family: 'Microsoft YaHei', 'SimSun';
+}
+
+.toolBar {
+	background-color: #27262a;
+	color: #cec0eb;
+	font-size: 16px;
+	font-weight: 400;
+	position: relative;
+}
+
+.toolBar-Container {
+	width: 100%;
+	height: 80px;
+	box-sizing: border-box;
+	padding: 0 20px;
+	margin: 0 auto;
+	display: flex;
+	-webkit-box-pack: justify;
+	justify-content: space-between;
+}
+
+.toolBar-Container-Left {
+	-webkit-box-flex: 0;
+	flex: none;
+}
+
+.toolBar-Container-Left-Logo {
+	width: 80px;
+	height: 80px;
+	margin-left: 0;
+	margin-top: 0;
+	position: relative;
+	float: left;
+}
+
+.toolBar-Container-Left-Menus {
+	width: auto;
+	display: inline;
+	margin-left: 80px;
+	text-decoration: none;
+	color: #cec0eb;
+}
+
+.toolBar-Container-Left-Menus a {
+	text-decoration: none;
+	color: #cec0eb;
+}
+
+#toolBar-Menu {
+	margin: 25px 15px;
+	height: 40px;
+	position: relative;
+	float: left;
+}
+
+#toolBar-Menu ul {
+	list-style: none;
+	margin-left: 5px;
+}
+
+#toolBar-Menu li {
+	margin-left: 10px;
+	display: inline;
+}
+
+.toolBar-Container-Middle {
+	padding: 0 20px;
+}
+
+.toolBar-Container-Middle-Search {
+	max-width: 400px;
+	min-width: 300px;
+}
+
+.toolBar-Container-Middle-Search-Container {
+	-webkit-box-sizing: border-box;
+	width: 100%;
+	height: 40px;
+	margin: 20px 30px 0 0;
+	box-sizing: border-box;
+}
+
+.toolBar-Container-Middle-Search-Container input {
+	text-indent: 12px;
+	width: calc(100% -88px);
+	font-size: 14px;
+	display: inline-block;
+	height: 100%;
+	background: #3e3c40;
+	color: #cec0eb;
+	vertical-align: top;
+	border: 2px solid #b8a6dc;
+	border-right: 3px solid #b8a6dc;
+	box-sizing: border-box;
+	outline: none;
+	border-radius: 16px 0 0 16px;
+}
+
+.toolBar-Container-Middle-Search-Container .gradient {
+	pointer-events: none;
+	background: #3e3c40;
+	position: absolute;
+	transform: translate(-40px, 1px);
+	display: inline-block;
+	width: 40px;
+	height: 38px;
+}
+
+.toolBar-Container-Middle-Search-Container button {
+	display: inline-block;
+	width: 100px;
+	height: 100%;
+	outline: 0;
+	border: 1 none;
+	border-radius: 0 16px 16px 0;
+	font-size: 14px;
+	line-height: 32px;
+	cursor: pointer;
+	transition: all .2s ease-in;
+	background-color: #b8a6dc;
+	color: #3e3c40;
+	text-align: center;
+}
+
+.toolBar-Container-Right {
+	-webkit-box-flex: 0;
+	width: auto !important;
+	display: flex;
+	flex: none;
+}
+
+.toolBar-Container-Right-UserName {
+	float: left;
+	position: relative;
+	padding: 20px;
+	flex: 5;
+	white-space: nowrap;
+}
+
+.toolBar-Container-Right-UserName span {
+	white-space: nowrap;
+}
+
+.toolBar-Container-Right-Btns {
+	height: 100%;
+	flex: 1;
+}
+
+.toolBar-Container-Right-Btns-Login {
+	padding: 20px 0 0 0 !important;
+	height: auto;
+}
+
+.toolBar-Container-Right-Btns-Login button {
+	display: block;
+	position: relative;
+	width: 40px;
+	height: 40px;
+	line-height: 40px;
+	text-align: center;
+	background-color: #b8a6dc;
+	color: #3e3c40;
+	border-radius: 50%;
+	cursor: pointer;
+}
+
+.toolBar-Container-Right-Btns-Avatar {
+	display: block;
+}
+
+.mainBox-Container {
+	-webkit-box-pack: center !important;
+	justify-content: center !important;
+	display: flex !important;
+	height: auto !important;
+	padding: 15px 15px 15px 15px;
+}
+
+.mainBox {
+	width: 1024px;
+	height: auto !important;
+	box-shadow: 0 2px 12px 0 rgba(0, 0, 0, .1);
+	background-color: #ffffff;
+}
+
+.mainBox-UserProfileBoxContainer {
+	display: flex !important;
+	width: 100%;
+	height: 100%;
+}
+
+.mainBox-UserProfileBox-Title {
+	font-size: 30px;
+	font-family: 'Microsoft YaHei', 'SimSun';
+	text-align: center;
+}
+
+.mainBox-UserProfileBox {
+	margin: auto;
+	display: block;
+}
+
+.mainBox-UserProfileBox div {
+	margin: 20px 0 20px 0;
+	height: 30px;
+}
+
+.userProfileStarTXT {
+	width: 5px;
+	margin: 20px 5px;
+	color: #ff0000;
+	font-size: 25px;
+}
+
+.userProfileErrorPW {
+	width: 110px;
+	margin: 20px 5px;
+	color: #ff0000;
+	font-size: 20px;
+}
+
+.userProfileUID {
+	display: flex;
+}
+
+.userProfileUIDTXT {
+	width: 100px;
+	font-size: 20px;
+	margin: 0 20px;
+}
+
+.userProfileUID input {
+	font-size: 20px;
+	font-family: 'Microsoft YaHei', 'SimSun';
+	height: 30px;
+	margin: 20px 40px 20px 40px;
+	padding: 0 15px;
+	border-radius: 7px;
+	background-color: #f5f7fa;
+	border: 1px solid #dcdfe6;
+	color: #c0c4cc;
+	cursor: not-allowed;
+}
+
+.userProfileUname {
+	display: flex;
+}
+
+.userProfileUnameTXT {
+	width: 100px;
+	font-size: 20px;
+	margin: 0 20px;
+}
+
+.userProfileUname input {
+	font-size: 20px;
+	font-family: 'Microsoft YaHei', 'SimSun';
+	height: 30px;
+	margin: 20px 40px 20px 40px;
+	padding: 0 15px;
+	border-radius: 7px;
+	background-color: #f5f7fa;
+	border: 1px solid #dcdfe6;
+	color: #000000;
+	cursor: pointer;
+}
+
+.userProfileUkey {
+	display: flex;
+}
+
+.userProfileUkeyTXT {
+	width: 100px;
+	font-size: 20px;
+	margin: 0 20px;
+}
+
+.userProfileUkey input {
+	font-size: 20px;
+	font-family: 'Microsoft YaHei', 'SimSun';
+	height: 30px;
+	margin: 20px 40px 20px 40px;
+	padding: 0 15px;
+	border-radius: 7px;
+	background-color: #f5f7fa;
+	border: 1px solid #dcdfe6;
+	color: #000000;
+	cursor: pointer;
+}
+
+.userProfileUkeyCheck {
+	display: flex;
+}
+
+.userProfileUkeyCheckTXT {
+	width: 100px;
+	font-size: 20px;
+	margin: 0 20px;
+}
+
+.userProfileUkeyCheck input {
+	font-size: 20px;
+	font-family: 'Microsoft YaHei', 'SimSun';
+	height: 30px;
+	margin: 20px 40px 20px 40px;
+	padding: 0 15px;
+	border-radius: 7px;
+	background-color: #f5f7fa;
+	border: 1px solid #dcdfe6;
+	color: #000000;
+	cursor: pointer;
+}
+
+.userProfileUsex {
+	display: flex;
+}
+
+.userProfileUsexTXT {
+	width: 100px;
+	font-size: 20px;
+	margin: 0 20px;
+}
+
+.userProfileUsex input {
+	font-size: 20px;
+	font-family: 'Microsoft YaHei', 'SimSun';
+	height: 30px;
+	margin: 20px 40px 20px 40px;
+	padding: 0 15px;
+	border-radius: 7px;
+	background-color: #f5f7fa;
+	border: 1px solid #dcdfe6;
+	color: #000000;
+	cursor: pointer;
+}
+
+.userProfileUage {
+	display: flex;
+}
+
+.userProfileUageTXT {
+	width: 100px;
+	font-size: 20px;
+	margin: 0 20px;
+}
+
+.userProfileUage input {
+	font-size: 20px;
+	font-family: 'Microsoft YaHei', 'SimSun';
+	height: 30px;
+	margin: 20px 40px 20px 40px;
+	padding: 0 15px;
+	border-radius: 7px;
+	background-color: #f5f7fa;
+	border: 1px solid #dcdfe6;
+	color: #000000;
+	cursor: pointer;
+}
+
+.userProfileSubmitBtn {
+	padding: 20px 40px;
+	display: flex;
+}
+
+.userProfileFormSubmitBtn {
+	flex: 1;
+	width: 40%;
+	height: 30px;
+	outline: 0;
+	border: 1 none;
+	border-radius: 5px;
+	margin: 0 1px;
+	background: #27262a;
+	color: #ffffff;
+	border: none;
+	transition: all .2s ease-in;
+	cursor: pointer;
+}
+
+.userProfileFormSubmitBtn:hover {
+	flex: 1;
+	width: 40%;
+	height: 30px;
+	outline: 0;
+	border: 1 none;
+	border-radius: 5px;
+	margin: 0 1px;
+	background: #48464d;
+	color: #ffffff;
+	border: none;
+	transition: all .1s ease-in;
+	cursor: pointer;
+}
+
+.mainBox-UserBox {
+	margin: 20px 20px;
+	display: flex;
+}
+
+.userListTable {
+	background-color: #efeaf9;
+	width: 100%;
+}
+
+.mainBox-UserBox td {
+	text-align: center;
+	background-color: #ffffff;
+	height: 30px;
+	flex: 2;
+}
+
+.mainBox-UserBox td.userTabUID {
+	width: 50px;
+}
+
+.mainBox-UserBox td.userTabUname {
+	width: 100px;
+}
+
+.mainBox-UserBox td.userTabUsex {
+	width: 55px;
+}
+
+.mainBox-UserBox td.userTabUage {
+	width: 55px;
+}
+
+.mainBox-UserBox td.userTabAuthority {
+	width: 55px;
+}
+
+.mainBox-UserBox td.userTabEditBtn {
+	width: 55px;
+}
+
+.userTabEditButton {
+	height: 30px;
+	background-color: #ffffff;
+	cursor: pointer;
+}
+
+.userTabEditButton:hover {
+	background-color: #efeaf9;
+}
+
+.mainBox-ArticleBox {
+	margin: 20px 20px;
+	display: flex;
+}
+
+.articleListTable {
+	background-color: #efeaf9;
+	width: 100%;
+	table-layout: fixed;
+}
+
+.mainBox-ArticleBox td {
+	text-align: center;
+	background-color: #ffffff;
+	height: 30px;
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	flex: 1;
+}
+
+.mainBox-ArticleBox td.articleTabAID {
+	width: 50px;
+}
+
+.mainBox-ArticleBox td.articleTabAname {
+	width: 100px;
+}
+
+.mainBox-ArticleBox td.articleTabAuthor {
+	width: 55px;
+}
+
+.mainBox-ArticleBox td.articleTabEditBtn {
+	width: 55px;
+}
+
+.articleTabEditButton {
+	height: 30px;
+	background-color: #ffffff;
+	cursor: pointer;
+}
+
+.articleTabEditButton:hover {
+	background-color: #efeaf9;
+}
+
+aside {
+	display: block;
+	width: 300px;
+	min-width: 100px;
+	float: left;
+}
+
+.mainBox-Aside {
+	box-shadow: 0 2px 12px 0 rgba(0, 0, 0, .1);
+	margin: 0 0 0 10px;
+	background-color: #ffffff;
+}
+
+.mainBox-Aside-Container {
+	display: block;
+	margin: 5px 5px 5px 5px;
+	background-color: #ffffff;
+	color: #27262a;
+	min-height: 512px;
+}
+
+.mainBox-Aside-Container-AdminEditor {
+	margin: 15px 5px;
+}
+
+.mainBox-Aside-Container-AdminEditor ul {
+	display: block;
+	margin: 30px 0 0 0;
+	list-style: none;
+	background-color: #ffffff;
+}
+
+.mainBox-Aside-Container-AdminEditor li {
+	flex: 1;
+	margin: 0 0 0 0;
+	background-color: #ffffff;
+}
+
+.mainBox-Aside-Container-AdminEditor-Menulist {
+	background-color: #ffffff;
+	height: 50px;
+	text-align: center;
+	line-height: 50px;
+	cursor: pointer;
+}
+
+.mainBox-Aside-Container-AdminEditor-Menulist:hover {
+	background-color: #fafafa;
+}
+
+.mainBox-Aside-Container-AdminEditor button {
+	display: block;
+	position: absolute;
+	margin: 5px 5px;
+	background-color: #d6d6d6;
+	color: #3e3c40;
+	border-radius: 4px;
+	cursor: pointer;
+}
+
+.footer {
+	background-color: #27262a;
+	border-top-width: 5px;
+	border-top-style: solid;
+	color: #27262a;
+	width: 100%;
+	overflow: hidden;
+	padding: 30px 0 10px;
+}
+
+.footerContainer {
+	color: #999;
+	width: 1200px;
+	margin: 0 auto;
+	position: relative;
+	letter-spacing: 2px;
+}
+
+.footerList {
+	height: 30px;
+	line-height: 30px;
+	font-size: 18px;
+}
+
+.footerTitle {
+	height: 30px;
+	line-height: 30px;
+	font-size: 18px;
+}
+
+.footerUl {
+	padding: 0;
+	list-style: none;
+	text-decoration: none;
+	margin: 0;
+}
+
+.footerBottom {
+	font-size: 14px;
+	border-top: 1px solid #393939;
+	padding: 20px 0 40px 0;
+	margin-top: 30px;
+	line-height: 25px;
+}
+
+.footerBottom section {
+	max-width: 1000px;
+}
+
+.arrow {
+	border: 9px solid transparent;
+	border-bottom-color: #38373b;
+	width: 0px;
+	height: 0px;
+	top: 0px
+}
+
+.stick {
+	width: 8px;
+	height: 14px;
+	border-radius: 1px;
+	background-color: #38373b;
+	top: 15px;
+}
+
+#backToTop div {
+	position: absolute;
+	margin: auto;
+	right: 0px;
+	left: 0px;
+}
+
+#backToTop {
+	background-color: #b8a6dc;
+	height: 38px;
+	width: 38px;
+	border-radius: 3px;
+	display: block;
+	cursor: pointer;
+	position: fixed;
+	right: 50px;
+	bottom: 100px;
+	display: none;
+}
+
+#backToTop:hover {
+	background-color: #c2b5e1;
+	height: 38px;
+	width: 38px;
+	border-radius: 3px;
+	display: block;
+	cursor: pointer;
+	position: fixed;
+	right: 50px;
+	bottom: 100px;
+	display: none;
+}
+
+.userEditorContainer {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100vw;
+	height: 100vh;
+	display: none;
+}
+
+.userEditorBox {
+	width: 100%;
+	height: 100%;
+	background: rgba(0, 0, 0, 0.3);
+	position: relative;
+}
+
+.userInfoBox {
+	position: absolute;
+	left: 50%;
+	top: 50%;
+	width: 500px;
+	height: 400px;
+	background: #f5f2fb;
+	margin-left: -250px;
+	margin-top: -250px;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	border-radius: 20px;
+}
+
+.userEditorInputBox {
+	width: 90%;
+	display: flex;
+	margin-bottom: 20px;
+}
+
+.userEditorInputBox .title {
+	text-align: center;
+	height: 30px;
+	line-height: 30px;
+	width: 100%;
+}
+
+.userEditorInputBox label {
+	display: block;
+	width: 25%;
+	height: 35px;
+	line-height: 35px;
+	text-align: right;
+}
+
+.userEditorInputBox input {
+	width: 65%;
+	height: 25px;
+}
+
+.userEditorRadioBox {
+	width: 90%;
+	display: flex;
+	margin-bottom: 20px;
+}
+
+.userEditorRadioBox label {
+	display: block;
+	width: 20%;
+	height: 35px;
+	line-height: 35px;
+	text-align: right;
+	flex: 1;
+}
+
+.userEditorRadioBox input {
+	flex: 1;
+	width: 10%;
+	height: 25px;
+}
+
+.userInfoBox button {
+	display: inline-block;
+	outline: 0;
+	border: 1 none;
+	border-radius: 5px;
+	background: #27262a;
+	color: #ffffff;
+	border: none;
+	transition: all .2s ease-in;
+	cursor: pointer;
+}
+
+.userEditorButtonContainer {
+	display: flex;
+	width: 40%;
+}
+
+.btn-userEditorSubmit {
+	flex: 1;
+	width: 40%;
+	height: 30px;
+	outline: 0;
+	border: 1 none;
+	border-radius: 5px;
+	margin: 0 1px;
+	background: #27262a;
+	color: #ffffff;
+	border: none;
+	transition: all .2s ease-in;
+	cursor: pointer;
+}
+
+.btn-userEditorDelete {
+	flex: 1;
+	width: 40%;
+	height: 30px;
+	outline: 0;
+	border: 1 none;
+	border-radius: 5px;
+	margin: 0 1px;
+	background: #27262a;
+	color: #ffffff;
+	border: none;
+	transition: all .2s ease-in;
+	cursor: pointer;
+}
+
+.btn-userEditorDeleteCheck {
+	flex: 1;
+	width: 40%;
+	height: 30px;
+	outline: 0;
+	border: 1 none;
+	border-radius: 5px;
+	margin: 0 1px;
+	background: #27262a;
+	color: #ffffff;
+	border: none;
+	transition: all .2s ease-in;
+	cursor: pointer;
+}
+
+.btn-userEditorClose {
+	position: absolute;
+	right: 20px;
+	top: 20px;
+	width: 30px;
+	height: 30px;
+	line-height: 30px;
+	text-align: center;
+	background: #27262a;
+	color: #ffffff;
+	font-weight: border;
+	border-radius: 30px;
+}
