@@ -38,7 +38,7 @@ public class AdminUserEditor extends HttpServlet {
 			UserManager userManager = new UserManager();
 			user = userManager.registerUser(userUID, "", userName, userSex, userAge, userAuthority);
 			System.out.println(userUID + " " + userName + " " + userSex + " " + userAge + " " + userAuthority);
-			userDao.updateUserInfo(user);
+			userDao.update(user);
 		} else {
 			userDao.delete(userUID);
 		}

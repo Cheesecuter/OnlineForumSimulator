@@ -287,25 +287,88 @@ aside {
 	margin: 5px 5px;
 	background-color: #ffffff;
 	color: #27262a;
-	min-height: 100px;
-}
-
-.mainBox-Aside-Container-UserName {
-	margin: 5px 5px;
+	min-height: 64px;
 }
 
 .mainBox-Aside-Container-ArticleEditor {
-	margin: 5px 5px;
+	margin: 15px 5px;
 }
 
-.mainBox-Aside-Container-ArticleEditor button {
+.mainBox-Aside-Container-ArticleEditor ul {
 	display: block;
-	position: absolute;
-	margin: 5px 5px;
-	background-color: #d6d6d6;
-	color: #3e3c40;
-	border-radius: 4px;
+	margin: 30px 0 0 0;
+	list-style: none;
+	background-color: #ffffff;
+}
+
+.mainBox-Aside-Container-ArticleEditor li {
+	flex: 1;
+	margin: 0 0 0 0;
+	background-color: #ffffff;
+}
+
+.mainBox-Aside-Container-ArticleEditor-Menulist {
+	background-color: #ffffff;
+	height: 50px;
+	text-align: center;
+	line-height: 50px;
+	font-size: 20px;
+	font-weight: 600;
 	cursor: pointer;
+}
+
+.mainBox-Aside-Container-ArticleEditor-Menulist:hover {
+	background-color: #fafafa;
+}
+
+.mainBox-Aside-ArticlesContainer{
+	margin: 20px;
+	background-color: #ececec;
+}
+
+.mainBox-Aside-ArticleContainer{
+	width: auto !important;
+	padding: 10px;
+	margin: 2px 0;
+	background-color: #ffffff;
+	cursor: pointer;
+}
+
+.mainBox-Aside-ArticleContainer:hover{
+	background-color: #fbfbfb;
+}
+
+.mainBox-Aside-ArticleBox{
+	height: 65px;
+	overflow: hidden;
+	text-overflow: ellipsis;
+}
+
+.mainBox-Aside-ArticleTitle{
+	font-size: 18px;
+	font-weight: 500;
+	height: 25px;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+}
+
+.mainBox-Aside-ArticleAuthor{
+	font-size: 14px;
+	font-weight: 400;
+	height: 20px;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+}
+
+.mainBox-Aside-ArticleContent{
+	font-size: 14px;
+	font-weight: 400;
+	height: 20px;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
 }
 
 .footer {

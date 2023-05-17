@@ -1,4 +1,4 @@
-package com.j2eeprac.Servlet.Utils;
+package com.j2eeprac.Servlet.Home.User;
 
 import java.io.IOException;
 
@@ -33,13 +33,9 @@ public class UserProfileEditor extends HttpServlet {
 		int userAge = Integer.parseInt(request.getParameter("userProfileIptUage"));
 		int userAuthority = userDao.findByUserID(userUID).getAuthority();
 		UserManager userManager = new UserManager();
-		if(userKey==null) {
-			user = userManager.registerUser(userUID, "", userName, userSex, userAge, userAuthority);
-			userDao.updateUserInfo(user);
-		}else {
-			user = userManager.registerUser(userUID, userKey, userName, userSex, userAge, userAuthority);
-			userDao.update(user);
-		}
+
+		user = userManager.registerUser(userUID, userKey, userName, userSex, userAge, userAuthority);
+		userDao.update(user);
 
 		dao.sessionCommit();
 

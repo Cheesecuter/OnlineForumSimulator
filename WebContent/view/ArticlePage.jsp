@@ -1,4 +1,6 @@
+<%@page import="com.j2eeprac.Entities.Article.Article"%>
 <%@page import="java.util.Date"%>
+<%@page import="java.util.List"%>
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
@@ -25,6 +27,7 @@
 	String articleContent;
 	String articleTitle;
 	String articleAuthor;
+	List<Article> homeArticleList;
 	int authorFlag = 0;
 	int adminFlag = 0;
 	String linkAdminFlag = "0";
@@ -152,59 +155,74 @@ if (searchInput == null) {
 						</article>
 					</div>
 				</div>
-				<div class="articleEditorContainer">
-					<%
-						adminFlag = (Integer) session.getAttribute("userAuthority");
-					loginUserName = (String) session.getAttribute("loginUserName");
-					articleAuthor = (String) session.getAttribute("articleAuthor");
-					if (((loginUserName != null) && loginUserName.equals(articleAuthor) && (!loginUserName.equals("未登录")))
-							|| adminFlag == 1) {
-						authorFlag = 1;
-						request.setAttribute("authorFlag", authorFlag);
-					}
-					%>
-					<c:if test="${authorFlag == 0}">
-					</c:if>
-					<c:if test="${authorFlag == 1}">
-						<div class="articleEditor">
-							<form name="articleEditorForm" action="ArticleEditor"
-								method="post">
-								<input type="hidden" name="releaseFlag" value="false" /> <a
-									href="LinkArticleEditor">编辑器</a>
-							</form>
-						</div>
-					</c:if>
-				</div>
 			</div>
 			<%--占位符 --%>
-			<aside class="mainBox-Aside" style="display: none;">
-				<div class="mainBox-Aside-Container">
-					<div class="mainBox-Aside-Container-UserName">
-						<%
-							loginUserName = (String) session.getAttribute("loginUserName");
-						msg = (String) session.getAttribute("msg");
-						if (loginUserName == null || loginUserName.equals("未登录")) {
-							loginUserName = "未登录";
-						}
-						if (msg == null) {
-							msg = "";
-						}
-						%>
-						<span name="loginUserName"> <%="登入用户: " + loginUserName%></span> <br />
-						<span> <%=msg%></span>
-					</div>
-				</div>
+			<aside class="mainBox-Aside">
 				<div class="mainBox-Aside-Container">
 					<div class="mainBox-Aside-Container-ArticleEditor">
-						<%
-							String articleEditorBtn;
-						if (loginUserName == null || loginUserName.equals("未登录")) {
-							articleEditorBtn = "<button class='openArticleEditorBtn'>未登录</button>";
-						} else {
-							articleEditorBtn = "<button class='openArticleEditorBtn'>编辑</button>";
-						}
-						%>
-						<%=articleEditorBtn%>
+						<ul>
+							<li><a onclick="articleEditorForm.submit()">
+									<div class="mainBox-Aside-Container-ArticleEditor-Menulist">
+										<%
+											adminFlag = (Integer) session.getAttribute("userAuthority");
+										loginUserName = (String) session.getAttribute("loginUserName");
+										articleAuthor = (String) session.getAttribute("articleAuthor");
+										if (((loginUserName != null) && loginUserName.equals(articleAuthor) && (!loginUserName.equals("未登录")))
+												|| adminFlag == 1) {
+											authorFlag = 1;
+											request.setAttribute("authorFlag", authorFlag);
+										}
+										%>
+										<c:if test="${authorFlag == 0}">
+										</c:if>
+										<c:if test="${authorFlag == 1}">
+											<div class="articleEditor">
+												<form name="articleEditorForm" action="LinkArticleEditor"
+													method="post">
+													编辑文章 <input type="hidden" name="releaseFlag" value="false" />
+													<%--<a href="LinkArticleEditor">编辑器</a> --%>
+												</form>
+											</div>
+										</c:if>
+									</div>
+							</a></li>
+						</ul>
+					</div>
+				</div>
+				<div>
+					<%
+						homeArticleList = (List<Article>) session.getAttribute("homeArticleList");
+					request.setAttribute("homeArticleList", homeArticleList);
+					%>
+					<div class="mainBox-Aside-ArticlesContainer">
+						<c:if test="${homeArticleList!=null }">
+							<c:forEach var="article" items="${homeArticleList }">
+								<div class="mainBox-Aside-ArticleContainer">
+									<div class="mainBox-Aside-ArticleBox">
+										<form name="articleForm<c:out value='${article.getAID() }' />"
+											class="articleForm" action="PageArticle" method="post">
+											<a
+												onclick="articleForm<c:out value='${article.getAID() }' />.submit()">
+												<div class="articleAID" style="display: none;">
+													<input name="articleAID"
+														value="<c:out value='${article.getAID() }' />" />
+												</div>
+												<div class="mainBox-Aside-ArticleTitle">
+													<c:out value="${article.getAname() }" />
+												</div>
+												<div class="mainBox-Aside-ArticleAuthor">
+													作者：
+													<c:out value="${article.getAuthor() }" />
+												</div>
+												<div class="mainBox-Aside-ArticleContent">
+													<c:out value="${article.getContent() }" />
+												</div>
+											</a>
+										</form>
+									</div>
+								</div>
+							</c:forEach>
+						</c:if>
 					</div>
 				</div>
 			</aside>
@@ -228,7 +246,7 @@ if (searchInput == null) {
 								href="LinkHome" style="color: #999;">联系方式</a> <a href="LinkHome"
 								style="color: #999;">帮助中心</a> <a href="LinkHome"
 								style="color: #999;">资源下载</a> <br /> <span>Tel:
-								10100020002&nbsp;&nbsp;</span> <span>Email: j2eeprac@mail.com</span>
+								10100020002&nbsp;&nbsp;</span> <span>Email: OnlineForum@mail.com</span>
 						</section>
 						<section class="footerBottomLink">
 							<span>Copyright 2023 HRBUST-2004010525.All Rights Reserved</span>
@@ -283,10 +301,7 @@ if (searchInput == null) {
 		src="${pageContext.request.contextPath }/js/UpdateUser.js?v=<%=System.currentTimeMillis()%>"></script>
 	<script type="text/javascript"
 		src="${pageContext.request.contextPath }/js/LoginFrame.js?v=<%=System.currentTimeMillis()%>"></script>
-	<%--
-	<script src="http://cdn.staticfile.org/jquery/1.11.1-rc2/jquery.min.js"></script>
-	 --%>
-	 <script type="text/javascript"
+	<script type="text/javascript"
 		src="${pageContext.request.contextPath }/js/jquery.min.js?v=<%=System.currentTimeMillis()%>"></script>
 	<script type="text/javascript"
 		src="${pageContext.request.contextPath }/js/BackToTop.js?v=<%=System.currentTimeMillis()%>"></script>

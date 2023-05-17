@@ -26,7 +26,6 @@ public class UserProfileBtn extends HttpServlet {
 
 		int adminFlag = 0;
 		String userProfileName = request.getParameter("userProfileName");
-		String reLogged = (String) session.getAttribute("reLogged");
 
 		if (userProfileName == null || userProfileName.equals("Î´µÇÂ¼")) {
 			session.setAttribute("userProfile", null);

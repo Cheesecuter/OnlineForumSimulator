@@ -1,4 +1,4 @@
-package com.j2eeprac.Servlet.Utils;
+package com.j2eeprac.Servlet.Home.User;
 
 import java.io.IOException;
 

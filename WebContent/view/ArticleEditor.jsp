@@ -117,7 +117,7 @@ if (searchInput == null) {
 					<div class="contentBox">
 						<form id="articleEditorForm" name="articleEditorForm"
 							action="ArticleEditor" method="post">
-							<input type="hidden" name="releaseFlag" value="<%=releaseFlag %>" />
+							<input type="hidden" name="releaseFlag" value="<%=releaseFlag%>" />
 							<div class="articleHeaderBox">
 								<div class="articleHeader">
 									<div class="articleTitleBox">
@@ -202,7 +202,7 @@ if (searchInput == null) {
 								href="LinkHome" style="color: #999;">联系方式</a> <a href="LinkHome"
 								style="color: #999;">帮助中心</a> <a href="LinkHome"
 								style="color: #999;">资源下载</a> <br /> <span>Tel:
-								10100020002&nbsp;&nbsp;</span> <span>Email: j2eeprac@mail.com</span>
+								10100020002&nbsp;&nbsp;</span> <span>Email: OnlineForum@mail.com</span>
 						</section>
 						<section class="footerBottomLink">
 							<span>Copyright 2023 HRBUST-2004010525.All Rights Reserved</span>
@@ -262,12 +262,11 @@ if (searchInput == null) {
 			articleEditorDeleteFlag.value = 1;
 			document.getElementById("articleEditorForm").submit();
 		}
-		function articleEditorFormSubmit(){
+		function articleEditorFormSubmit() {
 			var articleTitle = document.getElementById("articleTitle").value;
-			if(articleTitle.length==0){
+			if (articleTitle.length == 0) {
 				alert("标题不能为空");
-			}
-			else{
+			} else {
 				document.getElementById("articleEditorForm").submit();
 			}
 		}
@@ -276,10 +275,7 @@ if (searchInput == null) {
 		src="${pageContext.request.contextPath }/js/UpdateUser.js?v=<%=System.currentTimeMillis()%>"></script>
 	<script type="text/javascript"
 		src="${pageContext.request.contextPath }/js/LoginFrame.js?v=<%=System.currentTimeMillis()%>"></script>
-	<%--
-	<script src="http://cdn.staticfile.org/jquery/1.11.1-rc2/jquery.min.js"></script>
-	 --%>
-	 <script type="text/javascript"
+	<script type="text/javascript"
 		src="${pageContext.request.contextPath }/js/jquery.min.js?v=<%=System.currentTimeMillis()%>"></script>
 	<script type="text/javascript"
 		src="${pageContext.request.contextPath }/js/BackToTop.js?v=<%=System.currentTimeMillis()%>"></script>

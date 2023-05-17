@@ -9,8 +9,6 @@ public interface I_UserDao {
 	public int delete(String UID);
 
 	public int update(User user);
-	
-	public int updateUserInfo(User user);
 
 	public int countAll();
 	

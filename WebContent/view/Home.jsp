@@ -1,6 +1,6 @@
 <%@page import="com.j2eeprac.Entities.Article.Article"%>
-<%@page import="java.io.PrintWriter"%>
 <%@page import="com.j2eeprac.Entities.User.User"%>
+<%@page import="java.io.PrintWriter"%>
 <%@page import="java.util.List"%>
 <%@page import="java.util.ArrayList"%>
 <%@page import="java.util.Date"%>
@@ -38,7 +38,7 @@
 					<div class="toolBar-Container-Left-Logo">
 						<a href="LinkHome"> <img title="J2EE-PRAC"
 							src="WebContent/images/icon.png?v=<%=System.currentTimeMillis()%>"
-							?v=<%=System.currentTimeMillis()%> width="80px">
+							width="80px">
 						</a>
 					</div>
 					<%
@@ -163,7 +163,7 @@ if (searchInput == null) {
 								href="LinkHome" style="color: #999;">联系方式</a> <a href="LinkHome"
 								style="color: #999;">帮助中心</a> <a href="LinkHome"
 								style="color: #999;">资源下载</a> <br /> <span>Tel:
-								10100020002&nbsp;&nbsp;</span> <span>Email: j2eeprac@mail.com</span>
+								10100020002&nbsp;&nbsp;</span> <span>Email: OnlineForum@mail.com</span>
 						</section>
 						<section class="footerBottomLink">
 							<span>Copyright 2023 HRBUST-2004010525.All Rights Reserved</span>
@@ -215,10 +215,7 @@ if (searchInput == null) {
 		src="${pageContext.request.contextPath }/js/UpdateUser.js?v=<%=System.currentTimeMillis()%>"></script>
 	<script type="text/javascript"
 		src="${pageContext.request.contextPath }/js/LoginFrame.js?v=<%=System.currentTimeMillis()%>"></script>
-	<%--
-	<script src="http://cdn.staticfile.org/jquery/1.11.1-rc2/jquery.min.js"></script>
-	 --%>
-	 <script type="text/javascript"
+	<script type="text/javascript"
 		src="${pageContext.request.contextPath }/js/jquery.min.js?v=<%=System.currentTimeMillis()%>"></script>
 	<script type="text/javascript"
 		src="${pageContext.request.contextPath }/js/BackToTop.js?v=<%=System.currentTimeMillis()%>"></script>

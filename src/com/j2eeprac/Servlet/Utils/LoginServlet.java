@@ -10,12 +10,12 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
-import com.j2eeprac.Account.LoginOperator;
 import com.j2eeprac.Dao.I_ArticleDao;
 import com.j2eeprac.Dao.I_UserDao;
 import com.j2eeprac.Entities.Article.Article;
 import com.j2eeprac.Utils.Dao;
 import com.j2eeprac.Utils.JLogger;
+import com.j2eeprac.Utils.LoginOperator;
 
 @SuppressWarnings("serial")
 @WebServlet("/LoginServlet")

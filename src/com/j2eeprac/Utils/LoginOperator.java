@@ -1,4 +1,4 @@
-package com.j2eeprac.Account;
+package com.j2eeprac.Utils;
 
 import com.j2eeprac.Dao.I_UserDao;
 
